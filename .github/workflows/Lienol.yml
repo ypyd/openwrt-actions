@@ -1,11 +1,11 @@
 #=================================================
-# https://github.com/P3TERX/Actions-OpenWrt
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
-# Author: P3TERX
-# Blog: https://p3terx.com
+# Author: kenzo
+# https://github.com/kenzok8
 #=================================================
-name: Lienol
+
+name: Lienol-19.07
 
 on:
   schedule:
@@ -74,8 +74,8 @@ jobs:
           find openwrt/bin/targets/ -name "*sysupgrade*bin*" | xargs -i mv -f {} ./artifact/
           find openwrt/bin/targets/ -name "*combined*img*" | xargs -i mv -f {} ./artifact/
 
-    - name: Upload artifact
+    - name : 上传固件
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt firmware
+        name: Lienol-x64
         path: ./artifact/

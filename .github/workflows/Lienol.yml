@@ -27,7 +27,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Initialization environment
+    - name: 初始化环境
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
@@ -38,43 +38,44 @@ jobs:
           sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
-    - name: Clone source code
+
+    - name: 克隆源代码
       env: 
         REPO_URL: https://github.com/Lienol/openwrt
         REPO_BRANCH: dev-19.07
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-    - name: Update feeds
+    - name: 更新提要
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: Install feeds
+    - name: 安装提要
       run: cd openwrt && ./scripts/feeds install -a
     
-    - name: Costom configure file
+    - name: Costom配置文件
       run: |
           cd openwrt
           rm -f .config
           cp ../Lienol .config
           
-    - name: Make Defconfig
+    - name: Defconfig恢复文件
       run: |
           cd openwrt
           make defconfig
 
-    - name: Make download
+    - name: 下载dl文件包
       run: |
           cd openwrt
           make download -j8
           find dl -size -1024c -exec ls -l {} \;
           find dl -size -1024c -exec rm -f {} \;
 
-    - name: Multi-thread compile
+    - name: 多线程编译
       run: |
           cd openwrt
           echo -e "$(nproc) thread build."
           make -j$(nproc) V=s
 
 
-    - name: Assemble artifact
+    - name: 组装固件
       run: |
           rm -rf ./artifact/
           mkdir -p ./artifact/

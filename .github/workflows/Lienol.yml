@@ -54,7 +54,7 @@ jobs:
           rm -f .config
           cp ../Lienol .config
           
-    - name: Defconfig恢复文件
+    - name: 恢复配置
       run: |
           cd openwrt
           make defconfig

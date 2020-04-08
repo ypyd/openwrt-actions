@@ -30,4 +30,12 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-defaul
 ```bash
 sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 ```
-# kenzo-actions
+##### 固件下载链接
+
+[Lean固件下载地址](https://github.com/kenzok8/LEDE-x86_64/actions)
+
+[Lienol固件下载地址](https://github.com/kenzok8/actions-openwrt-passwall/actions)
+
+#### 固件包含
+
+#### SSRPLUS +passwall+clash+openclash （Lienol固件多smartdns）

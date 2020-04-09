@@ -32,9 +32,9 @@ sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/theme
 ```
 ##### 固件下载链接
 
-[Lean固件下载地址](https://github.com/kenzok8/LEDE-x86_64/actions)
-
-[Lienol固件下载地址](https://github.com/kenzok8/actions-openwrt-passwall/actions)
+- [Lienol固件下载地址](https://github.com/kenzok8/actions-openwrt-passwall/actions)
+- [Lean  固件下载地址](https://github.com/kenzok8/LEDE-x86_64/actions)
+- [ctc team  固件下载地址](https://github.com/kenzok8/openwrt-actions/actions?query=workflow%3Actc-19.07)
 
 #### 固件包含
 
